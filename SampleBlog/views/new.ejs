@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<div class="container form-container">
+  <form action="/blogs" method="POST">
+    <div class="form-group">
+      <label><h4>Blog title</h4></label>
+      <input class="form-control" type="text" name="blog[title]" placeholder="Blog Title">
+    </div>
+    <div class="form-group">
+      <label><h4>Author</h4></label>
+      <input class="form-control" type="text" name="blog[author]" placeholder="Author">
+    </div>
+    <div class="form-group">
+      <label><h4>Image</h4></label>
+      <input class="form-control" type="text" name="blog[image]" placeholder="Image">
+    </div>
+    <div class="form-group">
+      <label><h4>Blog Post</h4></label>
+      <textarea class="form-control" name="blog[body]" placeholder="Blog Post"></textarea>
+    </div>
+    <button class="btn btn-success" type="submit" name="submit">Submit</button>
+  </form>
+</div>
+
+<% include ../partials/footer %>

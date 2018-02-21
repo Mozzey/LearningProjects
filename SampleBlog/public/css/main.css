@@ -1,0 +1,43 @@
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.form-container {
+  margin: 25px auto;
+  width: 45%;
+}
+
+.index-body {
+  border: #999;
+  border: 1px solid rgba(0, 0 , 0, 0.2);
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.index-body a {
+  color: black;
+}
+
+.index-body a:hover {
+  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+.index-image {
+  float: left;
+  margin-right: 15px;
+  max-height: 265px;
+  width: 30%;
+}
+
+.show-title {
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.show-image {
+  height: 30%;
+  width: 100%;
+}
