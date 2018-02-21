@@ -4,6 +4,17 @@
   <div class="display-4 show-title"><%= blog.title %></div>
   <div class="container show-container">
     <img class="image-fluid show-image" src="<%= blog.image %>" alt="Blog Picture">
+    <h4 class="desc-title">
+    	<strong><%= blog.author %> - <%= blog.created.toDateString() %></strong>
+    </h4>
+    <hr>
+    <div>
+    	<%- blog.body %>
+	</div>
+    <a href="/blogs/<%= blog._id %>/edit" class="btn btn-warning">Edit</a>
+    <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+   		<button class="btn btn-danger">Delete</button>
+    </form>
   </div>
 </div>
 

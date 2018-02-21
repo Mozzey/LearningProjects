@@ -9,10 +9,13 @@ html {
 }
 
 .index-body {
+  display: flex;
+  flex-wrap: wrap;
   border: #999;
   border: 1px solid rgba(0, 0 , 0, 0.2);
   border-radius: 10px;
   margin-top: 40px;
+  padding: 0;
 }
 
 .index-body a {
@@ -26,18 +29,49 @@ html {
 }
 
 .index-image {
-  float: left;
   margin-right: 15px;
   max-height: 265px;
   width: 30%;
 }
 
 .show-title {
-  margin-top: 5vh;
+  margin: 5vh auto;
   text-align: center;
 }
 
 .show-image {
   height: 30%;
   width: 100%;
+}
+
+.desc-title {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+#delete {
+  display: inline;
+}
+
+
+/*MEDIA QUERIES*/
+@media(max-width: 1199px) {
+  .index-body {
+    width: 50%;
+  }
+
+  .index-image {
+    margin: 0;
+    width: 100%;
+  }
+
+}@media(max-width: 576px) {
+  .index-body {
+    width: 80%;
+  }
+
+  .index-image {
+    margin: 0;
+    width: 100%;
+  }
 }

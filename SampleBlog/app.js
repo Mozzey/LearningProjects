@@ -1,13 +1,15 @@
-var bodyParser = require('body-parser'),
-    express    = require('express'),
-    mongoose   = require('mongoose'),
-    app        = express();
+var methodOverride = require('method-override'),
+    bodyParser     = require('body-parser'),
+    express        = require('express'),
+    mongoose       = require('mongoose'),
+    app            = express();
 
 //APP CONFIG
 mongoose.connect('mongodb://localhost/sample_blog');
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 
 //MONGOOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
@@ -21,7 +23,7 @@ var blogSchema = new mongoose.Schema({
 var Blog = mongoose.model('Blog', blogSchema);
 
 app.get('/', function(req, res) {
-  res.redirect("/blogs");
+  res.redirect('/blogs');
 });
 
 //INDEX ROUTE
@@ -62,6 +64,28 @@ app.get('/blogs/:id', function(req, res) {
   })
 });
 
+//EDIT ROUTE
+app.get('/blogs/:id/edit', function(req, res) {
+  Blog.findById(req.params.id, function(err, foundBlog) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.render('edit', {blog: foundBlog});
+    }
+  });
+}); 
+
+//UPDATE ROUTE
+app.put('/blogs/:id', function(req, res) {
+  Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.redirect('/blogs/' + req.params.id)
+    }
+  })
+});
+
 //DELETE
 app.delete('/blogs/:id', function(req, res) {
   Blog.findByIdAndRemove(req.params.id, function(err) {
@@ -70,7 +94,7 @@ app.delete('/blogs/:id', function(req, res) {
     } else {
       res.redirect('/blogs');
     }
-  })
+  });
 });
 
 
