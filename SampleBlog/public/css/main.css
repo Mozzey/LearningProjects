@@ -29,9 +29,16 @@ html {
 }
 
 .index-image {
+  width: 100%;
+}
+
+#index-image {
   margin-right: 15px;
-  max-height: 265px;
   width: 30%;
+}
+
+.index-description {
+  margin-left: 5px;
 }
 
 .show-title {
@@ -53,24 +60,30 @@ html {
   display: inline;
 }
 
+.edit-delete {
+  margin: 20px 0;
+}
+
 
 /*MEDIA QUERIES*/
 @media(max-width: 1199px) {
-  .index-body {
-    width: 50%;
+ .index-image {
+    margin: 0;
+    width: 100%;
   }
 
-  .index-image {
+  #index-image {
     margin: 0;
     width: 100%;
   }
 
 }@media(max-width: 576px) {
-  .index-body {
-    width: 80%;
+  .index-image {
+    margin: 0;
+    width: 100%;
   }
 
-  .index-image {
+  #index-image {
     margin: 0;
     width: 100%;
   }

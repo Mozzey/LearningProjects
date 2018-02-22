@@ -3,7 +3,7 @@
   <ul>
     <% blogs.forEach(function(blog) { %>
       <div class="container index-body">
-        <a href="/blogs/<%= blog._id %>">
+        <a id="index-image" href="/blogs/<%= blog._id %>">
           <img class="index-image" src="<%= blog.image %>" alt="Card image cap">
         </a>
         <div class="index-description">

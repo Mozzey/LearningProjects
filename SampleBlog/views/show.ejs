@@ -11,10 +11,12 @@
     <div>
     	<%- blog.body %>
 	</div>
-    <a href="/blogs/<%= blog._id %>/edit" class="btn btn-warning">Edit</a>
-    <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-   		<button class="btn btn-danger">Delete</button>
-    </form>
+	<div class="edit-delete">
+	    <a href="/blogs/<%= blog._id %>/edit" class="btn btn-warning">Edit</a>
+	    <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+	   		<button class="btn btn-danger">Delete</button>
+	    </form>
+    </div>
   </div>
 </div>
 
